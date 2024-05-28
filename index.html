@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="random images\back.png" id="prevbtn">
+        <div class="gallery">
+            <div>
+                <span><img src="random images\img1.avif" alt="img1"></span>
+                <span><img src="random images\img2.avif" alt="img2"></span>
+                <span><img src="random images\img3.avif" alt="img3"></span>
+                <span><img src="random images\img4.avif" alt="img4"></span>
+            </div>
+            <div>
+                <span><img src="random images\img5.avif" alt="img5"></span>
+                <span><img src="random images\img6.avif" alt="img6"></span>
+                <span><img src="random images\img7.avif" alt="img7"></span>
+                <span><img src="random images\img8.avif" alt="img8"></span>
+            </div>
+        </div>
+        <img src="random images\next.png" id="nextbtn">
+    
+    </div>
+
+
+
+<script>
+    let scorllContainer= document.querySelector(".gallery");
+    let prevBtn=document.getElementById("prevbtn");
+    let nextBtn=document.getElementById("nextbtn");
+
+    scorllContainer.addEventListener("wheel",(evt)=>{
+        evt.preventDefault();
+        scorllContainer.scrollLeft+= evt.deltaY;
+        scorllContainer.style.scrollBehavior="auto";
+
+
+    });
+    nextBtn.addEventListener("click",()=>{
+        scorllContainer.style.scrollBehavior="smooth";
+        scorllContainer.scrollLeft+= 900;
+    });
+    prevBtn.addEventListener("click",()=>{
+        scorllContainer.style.scrollBehavior="smooth";
+
+        scorllContainer.scrollLeft-= 900;
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
